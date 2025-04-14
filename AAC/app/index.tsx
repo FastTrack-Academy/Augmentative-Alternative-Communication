@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 
 export default function HomeScreen() {
-  return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Welcome to the Home Screen!</Text>
-        <Text style={styles.description}>
-          This is a basic home screen built with Expo and React Native.
-        </Text>
-      </View>
-    </SafeAreaView>
-  );
+
+    // Initialize state to manage the message on screen
+    const [message, setMessage] = useState('Press the button to see something happen!');
+
+    // Function to handle button press
+    const handlePress = () => {
+        setMessage('Button pressed! The screen updated!');
+    };
+    return (
+        <SafeAreaView style={styles.safeArea}>
+        <View style={styles.container}>
+            <Text style={styles.title}>Welcome to the Home Screen!</Text>
+            <Text style={styles.description}>
+            This is a basic home screen built with Expo and React Native.
+            </Text>
+        </View>
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
